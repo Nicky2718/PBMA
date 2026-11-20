@@ -36,7 +36,7 @@ const CONFIG = {
 
   // Canción desde YouTube: pega aquí el link del video (o déjalo vacío "")
   // Ejemplo: "https://www.youtube.com/watch?v=XXXXXXXXXXX"
-  youtube: "",
+  youtube: "https://youtu.be/OASOA4DludE?si=nwV-WmPIDkFMrDGF",
 
   // Segundo en el que empieza la canción (útil para saltar intros)
   youtubeInicio: 0,
