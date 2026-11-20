@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070b">
+  <title>Tienes una carta ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Cielo (fondo animado) -->
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <!-- Corazones flotando -->
+  <div id="hearts" aria-hidden="true"></div>
+
+  <!-- Botón de música -->
+  <button id="musicBtn" class="music-btn" aria-label="Pausar o reanudar música" hidden>
+    <span class="bars"><i></i><i></i><i></i></span>
+  </button>
+
+  <!-- ESCENA 1: carta cerrada -->
+  <main id="scene-envelope" class="scene active">
+    <p class="hint">tienes una carta</p>
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir la carta">
+      <div class="env-back"></div>
+      <div class="env-letter"><span></span><span></span><span></span><span></span></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="env-seal">♥</div>
+    </div>
+    <p class="hint small">toca para abrirla</p>
+  </main>
+
+  <!-- ESCENA 2: carta abierta -->
+  <section id="scene-letter" class="scene">
+    <article class="letter" id="letter">
+      <p class="letter-to">Para ti,</p>
+      <p class="letter-text" id="letterText"></p>
+      <p class="letter-sign" id="letterSign"></p>
+
+      <div class="letter-ask" id="letterAsk">
+        <div class="divider"><span>✦</span></div>
+        <p class="ask-text" id="askText"></p>
+        <form id="dateForm" autocomplete="off">
+          <input type="date" id="dateInput" required min="1900-01-01" max="2100-12-31">
+          <button type="submit">Guardar</button>
+        </form>
+        <p class="error" id="dateError" role="alert"></p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ESCENA 3: el cielo de esa fecha -->
+  <section id="scene-sky" class="scene">
+    <div class="sky-caption">
+      <p class="sky-date" id="skyDate"></p>
+      <p class="sky-msg" id="skyMsg"></p>
+      <p class="sky-place" id="skyPlace"></p>
+    </div>
+    <button class="again" id="againBtn">volver a la carta</button>
+  </section>
+
+  <audio id="song" loop preload="auto"></audio>
+
+  <script src="js/config.js"></script>
+  <script src="js/stars-data.js"></script>
+  <script src="js/sky.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
